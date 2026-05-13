@@ -32,16 +32,14 @@ A simple and efficient email console built with Node.js, Express, and Nodemailer
    ```
 
 3. **Configure the Server:**
-   Open `server.js` and update the `transporter` configuration with your credentials:
-   ```javascript
-   const transporter = nodemailer.createTransport({
-       service: "gmail",
-       auth: {
-           user: "your-email@gmail.com",
-           pass: "your-app-password"
-       }
-   });
+   Create a `.env` file in the root directory and add your credentials:
+   ```env
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-app-password
+   PORT=3000
    ```
+   *Note: Ensure `.env` is ignored by git (already handled in `.gitignore`).*
+
 
 ## Running the App
 

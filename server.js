@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
@@ -30,8 +31,8 @@ const aliases = {
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "asmazinbox321@gmail.com",
-        pass: "gzuhpycpjwvearkf"
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
