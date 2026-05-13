@@ -16,10 +16,21 @@ async function sendMail() {
         formData.append("template", fileInput.files[0]);
     }
 
-    await fetch("/send-mail", {
-        method: "POST",
-        body: formData
-    });
+    try {
+        const response = await fetch("/send-mail", {
+            method: "POST",
+            body: formData
+        });
 
-    alert("Mail sent");
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            alert("Mail sent successfully!");
+        } else {
+            alert("Failed to send mail: " + (result.error || "Unknown error"));
+        }
+    } catch (error) {
+        console.error("Error sending mail:", error);
+        alert("An error occurred while sending mail. Check the console for details.");
+    }
 }
