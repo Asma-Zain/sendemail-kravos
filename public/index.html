@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kravos Mailer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Kravos Mail Console</h2>
+
+    <select id="fromEmail">
+        <option>asma@kravos.tech</option>
+        <option>info@kravos.tech</option>
+        <option>nitheesh@kravos.tech</option>
+        <option>animesh@kravos.tech</option>
+    </select>
+
+    <input id="to" placeholder="Recipients (comma separated)">
+    <input id="cc" placeholder="CC">
+    <input id="bcc" placeholder="BCC">
+
+    <input id="subject" placeholder="Subject">
+
+    <select id="bodyType">
+        <option value="html">HTML</option>
+        <option value="text">Plain Text</option>
+    </select>
+
+    <input type="file" id="htmlFile">
+
+    <textarea id="body" rows="10" placeholder="Email content"></textarea>
+
+    <button onclick="sendMail()">Send</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
